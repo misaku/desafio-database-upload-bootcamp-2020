@@ -20,6 +20,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Setup PostgreSQL
+      uses: Harmon758/postgresql-action@v1.0.0
+      with:
+        postgresql db: gostack_desafio06_tests
+        postgresql user: postgres
+        postgresql password: docker 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
